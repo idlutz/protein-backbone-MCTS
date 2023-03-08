@@ -554,7 +554,7 @@ class tree_builder():
         
         # general build params
         self.subunit_checks = 10
-        self.max_rad = int(sys.argv[3])
+        self.max_rad = 80
         self.max_helix_length = 22
         self.min_helix_length = 9
         self.max_ext_length = self.max_helix_length - 4 # set by max helix length
@@ -1039,7 +1039,7 @@ tt = zero_ih.reshape(int(len(zero_ih)/5),5,4)
 stub = tt[7:10].reshape(15,4)
 ori_1res = tt[10:15].reshape(25,4)
 
-stub_radius = int(sys.argv[2])
+stub_radius = 65
 wnum_hash = []
 g = tree_builder(stub + [0,30,0,0], wnum_hash)
 sym_name = sys.argv[1].split('/')[-1].split('_')[0]
