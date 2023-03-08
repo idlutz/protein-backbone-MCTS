@@ -3,14 +3,23 @@ A generative protein design method for assembling alpha helices and loops into o
 
 Use this [container](https://files.ipd.uw.edu/pub/protein-backbone-MCTS/protein-backbone-MCTS.sif) (download size 4.6GB) to run the sampling scripts:
 ```
-protein-backbone-MCTS.sif <sampling_script>.py
+protein-backbone-MCTS.sif I_cages.py
 ```
-Sampled backbones passing filtering criteria are output in the `outputs/` folder. The python scripts can be modified to customize the geometric constraints and score functions, sampling procedure and parameters, and final filtering criteria in order to generate desired backbones.
+Tetrahedral, octahedral, and icosahedral cages can be sampled as above without additional arguments, while the other scripts require additional arguments.
 
 For shape filling, provide a `.obj` file specificying the desired shape:
 ```
 protein-backbone-MCTS.sif fill_shapes.py example_shapes/test_sphere.obj
 ```
-For pore closure, a PDB is provided to initialize the sampling (`example_pore_starts/`). For `pseudosym_cages.py`, 
+For pore closure, a PDB is provided with docked outer and inner rings to initialize the sampling:
+```
+protein-backbone-MCTS.sif pore_closure.py example_pore_starts/example.pdb
+```
+For pseudosymmetric cages, provide a transformation matrices file specifying the desired symmetry:
+```
+protein-backbone-MCTS.sif pseudosym_cages.py xforms/T2_7ncr.xforms
+```
+
+Sampled backbones passing filtering criteria are output in the `outputs/` folder. The python scripts can be modified to customize the geometric constraints and score functions, sampling procedure and parameters, and final filtering criteria in order to generate desired backbones.
 
 Contact Isaac Lutz (ilutz@uw.edu, isaacdlutz@gmail.com) with any questions or comments.
