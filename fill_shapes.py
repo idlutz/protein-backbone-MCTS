@@ -651,7 +651,6 @@ binned_loops = load_obj('/opt/conda/envs/env/rl_tree_source/binned_loops_no0')
 wnum_hash = voxelize_mesh(shape_path, 0)
 
 
-
 def euler_to_R(phi,theta,psi): # in radians
     R_x = np.array([[1,         0,                  0                   ],
                     [0,         np.cos(phi), -np.sin(phi) ],

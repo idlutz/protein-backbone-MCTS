@@ -497,7 +497,6 @@ def test_builder(num_runs = 80000001):
             
         
         g.test_build()
-        print(ct)
         
         ct += 1
 
