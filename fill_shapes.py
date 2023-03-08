@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
-
-
 import sys
-
-sys.path.append('/home/ilutz/BINDERS_RL/2_RL/tree_source/')
 
 from math import cos,sin,tan,asin,acos,radians,sqrt,degrees,atan,atan2,copysign,exp
 from math import pi as mPI
@@ -64,12 +59,9 @@ import pymesh
 reload(nu)
 
 
-# In[27]:
-
 shape_path = sys.argv[1]
 
-zero_ih = nu.npose_from_file('/home/ilutz/BINDERS_RL/2_RL/zero_ih_long.pdb')
-
+zero_ih = nu.npose_from_file('/opt/conda/envs/env/rl_tree_source/zero_ih_long.pdb')
 
 def save_obj(obj, name):
     with open(name + '.pkl', 'wb') as f:
@@ -631,10 +623,7 @@ class tree_builder():
 
 
 # loading binned loops from .pkl file
-binned_loops = load_obj('/home/ilutz/BINDERS_RL/2_RL/binned_loops_no0')
-
-
-# In[28]:
+binned_loops = load_obj('/opt/conda/envs/env/rl_tree_source/binned_loops_no0')
 
 
 # build_mesh = '../build_vol.obj'
@@ -658,13 +647,9 @@ binned_loops = load_obj('/home/ilutz/BINDERS_RL/2_RL/binned_loops_no0')
 # pymesh.save_mesh_raw("test_cube.obj",output_mesh.vertices, output_mesh.faces)
 
 
-# In[30]:
-
 
 wnum_hash = voxelize_mesh(shape_path, 0)
 
-
-# In[40]:
 
 
 def euler_to_R(phi,theta,psi): # in radians
@@ -687,8 +672,6 @@ def euler_to_R(phi,theta,psi): # in radians
 
     return R
 
-
-# In[43]:
 
 
 def random_init_build(runs):
@@ -778,14 +761,7 @@ maxs = mesh.vertices.max(axis=0)
 mins = mesh.vertices.min(axis=0)
 
 
-# In[44]:
-
 for _ in range(99999999):
     random_init_build(10000)
 
-
-# In[ ]:
-
-
-# import wfmesh; wfmesh.createWFObj('../test_cube.obj','t')
 

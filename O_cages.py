@@ -9,8 +9,6 @@
 
 import sys
 
-sys.path.append('/home/ilutz/BINDERS_RL/2_RL/tree_source/')
-
 from math import cos,sin,tan,asin,acos,radians,sqrt,degrees,atan,atan2,copysign,exp
 from math import pi as mPI
 from math import pi
@@ -72,10 +70,10 @@ def load_obj(name ):
     with open(name + '.pkl', 'rb') as f:
         return pickle.load(f)
 
-icos_matrices = load_obj('/home/ilutz/CAGES_RL/O/O_matrices')
+icos_matrices = load_obj('xforms/O_matrices')
 icosa_xforms = [np.append(x,np.array([[0,0,0,1]])).reshape(4,4) for x in icos_matrices]
 
-zero_ih = nu.npose_from_file('/home/ilutz/BINDERS_RL/2_RL/zero_ih_long.pdb')
+zero_ih = nu.npose_from_file('/opt/conda/envs/env/rl_tree_source/zero_ih_long.pdb')
 
 def icosahedral_op(pt_set,icosa_xform_set=icosa_xforms): # icosahedral symmetry operations
 
@@ -86,7 +84,7 @@ def icosahedral_op(pt_set,icosa_xform_set=icosa_xforms): # icosahedral symmetry 
     return np.concatenate(tuple(i_out))
 
 
-rr = np.load('/home/ilutz/BINDERS_RL/2_RL/all_loops_bCov.npz', allow_pickle=True)
+rr = np.load('/opt/conda/envs/env/rl_tree_source/all_loops_bCov.npz', allow_pickle=True)
 all_loops = [rr[f] for f in rr.files][0]
     
 
@@ -821,11 +819,10 @@ class tree_builder():
 # binned_loops = kClusBin(clusts1=1,clusts2=32,clusts3=16)
 
 # # save loop bins, for easier use later
-# save_obj(binned_loops,'/home/ilutz/BINDERS_RL/2_RL/binned_loops_no0')
+# save_obj(binned_loops,'binned_loops_no0')
 
 # loading binned loops from .pkl file
-binned_loops = load_obj('/home/ilutz/BINDERS_RL/2_RL/binned_loops_no0')
-
+binned_loops = load_obj('/opt/conda/envs/env/rl_tree_source/binned_loops_no0')
 
 # build_mesh = '../build_vol.obj'
 
@@ -840,9 +837,6 @@ binned_loops = load_obj('/home/ilutz/BINDERS_RL/2_RL/binned_loops_no0')
 #     # for sequence buffer of 0:
 #     wnum_hash = load_obj('../wnum_hash')
     
-# # for sequence buffer of 1:
-# #wnum_hash = load_obj('/home/ilutz/RL_RIF/apoe_test_auto/apoe_wnum_hash2_buff1')
-
 
 def dump_holigomer(npose, chains, out_name):
     slice_len = len(npose)/chains
@@ -1021,8 +1015,6 @@ g = tree_builder(stub + [0,30,0,0], wnum_hash)
 maxs = [75,75,75]
 mins = [0,0,0]
 
-
-# In[ ]:
 
 
 for _ in range(99999999):
