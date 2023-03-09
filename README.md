@@ -22,6 +22,6 @@ protein-backbone-MCTS.sif pseudosym_cages.py xforms/T2_7ncr.xforms
 
 Sampled backbones passing filtering criteria are output in the `outputs/` folder. The python scripts can be modified to customize the geometric constraints and score functions, sampling procedure and parameters, and final filtering criteria in order to generate desired backbones.
 
-Zenodo archive can be found here: [![DOI](https://zenodo.org/badge/.svg)]
+Zenodo archive can be found here: [![DOI](https://zenodo.org/badge/526764585.svg)](https://zenodo.org/badge/latestdoi/526764585)
 
 Contact Isaac Lutz (ilutz@uw.edu, isaacdlutz@gmail.com) with any questions or comments.
