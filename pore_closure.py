@@ -55,8 +55,8 @@ reload(nu)
 
 base_name = sys.argv[1].split('/')[-1][:-4]
 t1 = nu.npose_from_file(sys.argv[1])
-inner = t1[306*5*6:]
-stub = np.append(t1[:306*5][10:], inner[:int(len(inner)/6)], 0)
+inner = t1[478*5*6:]
+stub = np.append(t1[:478*5][10:], inner[:int(len(inner)/6)], 0)
 wnum_hash = []
 
 inner_r = inner.reshape(int(len(inner)/5),5,4)
@@ -67,8 +67,8 @@ inner_terminii = [x[-1][nu.CA][:3] for x in inner_r]
 
 # vals for determining cone -- outer constant, inner variable
 outer_maxz = 25
-outer_minz = -25
-outer_rad = 55
+outer_minz = -35
+outer_rad = 51
 
 inner_maxz = max([x[2] for x in inner]) + 5
 inner_minz = min([x[2] for x in inner]) - 5
@@ -409,7 +409,7 @@ class tree_builder():
         self.score_lists = [self.build_lens,self.overall_scores]
         
         # general build params
-        self.max_rad = outer_rad
+        self.max_rad = 56
         self.max_helix_length = 25
         self.min_helix_length = 7
         self.max_ext_length = self.max_helix_length - 4 # set by max helix length
