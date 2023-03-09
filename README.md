@@ -17,7 +17,7 @@ protein-backbone-MCTS.sif C_sym.py 8
 ```
 For pore closure, a PDB is provided with docked outer and inner rings to initialize the sampling:
 ```
-protein-backbone-MCTS.sif pore_closure.py example_pore_starts/example.pdb
+protein-backbone-MCTS.sif pore_closure.py example_pore_starts/sampled_0_0_0.pdb
 ```
 For pseudosymmetric cages, provide a transformation matrices file specifying the desired symmetry:
 ```
