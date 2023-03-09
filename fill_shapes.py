@@ -742,12 +742,12 @@ def random_init_build(runs):
                     bd = pre_bd[0]
                     build_len = int(len(bd)/5)
 
-                    nu.dump_npdb(bd,f'outputs/build_{build_len}.pdb')
+                    nu.dump_npdb(bd,f'outputs/build_{shape_name}_{build_len}.pdb')
                     dump_ct += 1
 
 
 
-
+shape_name = sys.argv[1].split('/')[-1][:-4]
 tt = zero_ih.reshape(int(len(zero_ih)/5),5,4)
 
 # first x residues of ideal alpha helix with center of helical axis at origin, CA1 at y=0 z=0
