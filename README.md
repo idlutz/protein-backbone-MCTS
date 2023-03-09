@@ -11,6 +11,10 @@ For shape filling, provide a `.obj` file specificying the desired shape:
 ```
 protein-backbone-MCTS.sif fill_shapes.py example_shapes/test_sphere.obj
 ```
+For C symmetries, provide a C symmetry number:
+```
+protein-backbone-MCTS.sif C_sym.py 8
+```
 For pore closure, a PDB is provided with docked outer and inner rings to initialize the sampling:
 ```
 protein-backbone-MCTS.sif pore_closure.py example_pore_starts/example.pdb
