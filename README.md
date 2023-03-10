@@ -19,9 +19,9 @@ For pore closure, a PDB is provided with docked outer and inner rings to initial
 ```
 protein-backbone-MCTS.sif pore_closure.py example_pore_starts/sampled_HALC6_208_0_0_10.pdb
 ```
-For pseudosymmetric cages, provide a transformation matrices file specifying the desired symmetry:
+For quasisymmetric cages, provide a transformation matrices file specifying the desired symmetry:
 ```
-protein-backbone-MCTS.sif pseudosym_cages.py xforms/T2_7ncr.xforms
+protein-backbone-MCTS.sif quasisym_cages.py xforms/T2_7ncr.xforms
 ```
 
 Sampled backbones passing filtering criteria are output in the `outputs/` folder. The python scripts can be modified to customize the geometric constraints and score functions, sampling procedure and parameters, and final filtering criteria in order to generate desired backbones.
