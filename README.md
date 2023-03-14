@@ -1,4 +1,4 @@
-![header](blank.png)
+![header](fig1.png)
 
 # protein-backbone-MCTS
 A generative protein design method for assembling alpha helices and loops into optimal protein backbones using provided sets of geometric constraints and score functions, as described in the paper ["Top-down design of protein architectures with reinforcement learning"](https://www.biorxiv.org/content/10.1101/2022.09.25.509419v1).
